@@ -5,6 +5,10 @@ const app = express()
 // require handlebars
 const exphbs = require('express-handlebars');
 
+// Initialize Body-Parser
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // Use "main" as our default layout
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 // Use handlebars to render
@@ -25,6 +29,13 @@ app.get('/', (req, res) => {
   res.render('events-index', { events: events });
 })
 
+app.get('/events/new', (req, res) => {
+    res.render('events-new', {});
+})
+
+app.post('/events', (req, res) => {
+    console.log(req.body);
+})
 
 
 
