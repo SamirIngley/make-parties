@@ -2,25 +2,26 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "database_development",
+    "database": "my-db",
     "host": "127.0.0.1",
-    "dialect": "mysql",
+    "dialect": "postgres",
     "operatorsAliases": false
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "database_test",
+    "database": "my-db",
     "host": "127.0.0.1",
-    "dialect": "mysql",
+    "dialect": "postgres",
     "operatorsAliases": false
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
+    "database": "my-db",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "postgres",
+    "operatorsAliases": false,
+    "use_env_variable": "PROD_DATABASE_URL"
   }
 }
