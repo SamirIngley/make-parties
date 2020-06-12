@@ -7,11 +7,15 @@ const exphbs = require('express-handlebars');
 
 // Initialize Body-Parser
 const bodyParser = require('body-parser');
+<<<<<<< HEAD
 // must come after const app=express() and before routes
 app.use(bodyParser.urlencoded({ extended: true}));
 
 // requiring the models
 const models = require('./db/models');
+=======
+app.use(bodyParser.urlencoded({ extended: true }));
+>>>>>>> parent of 252b649... fixed error. Order.... in index, auth comes after let sequelize
 
 // Use "main" as our default layout
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
@@ -41,11 +45,15 @@ app.get('/events/new', (req, res) => {
 
 // CREATE
 app.post('/events', (req, res) => {
+<<<<<<< HEAD
   models.Event.create(req.body).then(event => {
     res.redirect(`/`);
   }).catch((err) => {
     console.log(err)
   });
+=======
+    console.log(req.body);
+>>>>>>> parent of 252b649... fixed error. Order.... in index, auth comes after let sequelize
 })
 
 
