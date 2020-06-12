@@ -4,8 +4,8 @@ const app = express()
 
 // require handlebars
 const exphbs = require('express-handlebars');
-
-<<<<<<< HEAD
+//
+// <<<<<<< HEAD
 // Initialize Body-Parser
 const bodyParser = require('body-parser');
 
@@ -18,8 +18,8 @@ const models = require('./db/models');
 app.use(bodyParser.urlencoded({ extended: true }));
 // >>>>>>> parent of 252b649... fixed error. Order.... in index, auth comes after let sequelize
 
-=======
->>>>>>> parent of ab9221a... starting postgre
+// =======
+// >>>>>>> parent of ab9221a... starting postgre
 // Use "main" as our default layout
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 // Use handlebars to render
@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
   })
 })
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 app.get('/events/new', (req, res) => {
     res.render('events-new', {});
 })
@@ -59,8 +59,8 @@ app.post('/events', (req, res) => {
     console.log(req.body);
 // >>>>>>> parent of 252b649... fixed error. Order.... in index, auth comes after let sequelize
 })
-=======
->>>>>>> parent of ab9221a... starting postgre
+// =======
+// >>>>>>> parent of ab9221a... starting postgre
 
 
 
