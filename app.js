@@ -7,7 +7,10 @@ const exphbs = require('express-handlebars');
 
 // Initialize Body-Parser
 const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true}));
+
+// requiring the models
+const models = require('./db/models');
 
 // Use "main" as our default layout
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
@@ -34,7 +37,11 @@ app.get('/events/new', (req, res) => {
 })
 
 app.post('/events', (req, res) => {
-    console.log(req.body);
+    models.Event.create(req.body).then(event => {
+        res.redirect('/');
+    }).catch((err) => {
+        console.log(err)
+    });
 })
 
 
