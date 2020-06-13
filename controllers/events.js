@@ -1,5 +1,6 @@
 
 module.exports = function(app, models) {
+const moment= require('moment');
 
     // Index
     app.get('/', (req, res) => {
@@ -28,6 +29,9 @@ module.exports = function(app, models) {
       // Search for the event by its id that was passed in via req.params
       models.Event.findByPk(req.params.id, { include: [{ model: models.Rsvp }] }).then((event) => {
         // If the id is for a valid event, show it
+        let createdAt = event.createdAt;
+        createdAt = moment(createdAt).format('MMMM Do YYYY, h:mm:ss a');
+        event.createdAtFormatted = createdAt;
         res.render('events-show', { event: event })
       }).catch((err) => {
         // if they id was for an event not in our db, log an error
