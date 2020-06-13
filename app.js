@@ -27,6 +27,7 @@ app.set('view engine', 'handlebars');
 
 
 require('./controllers/events')(app, models);
+require('./controllers/rsvps')(app, models);
 
 // OUR MOCK ARRAY OF PROJECTS
 var events = [
