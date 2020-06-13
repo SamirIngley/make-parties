@@ -22,6 +22,13 @@
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": false,
-    "use_env_variable": "PROD_DATABASE_URL"
+    "use_env_variable": "DATABASE_URL",
+   "dialect": "postgres",
+   "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   }
 }
